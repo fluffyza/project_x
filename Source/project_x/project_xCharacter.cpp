@@ -6,7 +6,8 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
-#include "Macros.h"
+#include "DebugHUDController.h"
+#include "DebugLogger.h"
 #include "GameFramework/SpringArmComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -80,7 +81,8 @@ void Aproject_xCharacter::SetupPlayerInputComponent(class UInputComponent* Playe
 
 void Aproject_xCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
-	D("Jumping", FColor::Red);
+	ADebugLogger db;
+	db.PrintWarning("Jumping");
 	Jump();
 }
 
